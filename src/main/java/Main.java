@@ -153,6 +153,7 @@ public class Main {
                     System.out.println("این سیاره دارای حیات نیست.");
                 }
             }
+
             if (planet instanceof ResourceRichPlanet) {
                 ResourceRichPlanet resourcePlanet = (ResourceRichPlanet) planet;
                 System.out.println("منابع طبیعی: " + String.join(", ", resourcePlanet.getResources()));
