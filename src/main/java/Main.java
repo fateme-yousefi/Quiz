@@ -1,5 +1,6 @@
 package src.main.java;
 
+import src.main.java.DataManager;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -141,8 +142,6 @@ public class Main {
         System.out.print("نام سیاره: ");
         String planetName = scanner.nextLine();
 
-
-
         Planet planet = findPlanetByName(planetName);
         if (planet != null) {
             System.out.println(planet);
@@ -175,10 +174,9 @@ public class Main {
 
     private static Planet findPlanetByName(String name) {
         for (Galaxy galaxy : galaxies) {
-            for (Planet planet : galaxy.getPlanets()) {
-                if (planet.getName().equalsIgnoreCase(name)) {
-                    return planet;
-                }
+            Planet planet = galaxy.getPlanetByName(name);
+            if (planet != null) {
+                return planet;
             }
         }
         return null;
